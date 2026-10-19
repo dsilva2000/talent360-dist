@@ -1,0 +1,12 @@
+# Talent 360 · contador privado. Solo hit.php y report.php son accesibles.
+Options -Indexes
+<IfModule mod_headers.c>
+  Header always set X-Robots-Tag "noindex, nofollow"
+  Header always set Cache-Control "no-store"
+</IfModule>
+<FilesMatch ".*">
+  Require all denied
+</FilesMatch>
+<FilesMatch "^(hit|report)\.php$">
+  Require all granted
+</FilesMatch>
