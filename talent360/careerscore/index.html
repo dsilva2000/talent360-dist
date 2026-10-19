@@ -20,7 +20,60 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 <script>/* tema y preferencias antes de pintar: evita parpadeo */(function(){try{var d=document.documentElement,t=localStorage.getItem('t360-theme');if(!t)t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.setAttribute('data-theme',t);var a=JSON.parse(localStorage.getItem('t360-a11y')||'{}');if(a.fs)d.setAttribute('data-fs',a.fs);if(a.contrast)d.setAttribute('data-contrast','high');if(a.underline)d.setAttribute('data-underline','1');}catch(e){}})();</script>
-<link rel="stylesheet" href="../assets/hp.css?v=c169f1f4">
+<link rel="stylesheet" href="../assets/hp.css?v=723119f8">
+<style>/* Servicios: estilos propios de la sección (van con la página para no depender de la versión de hp.css en el servidor) */
+/* ── Servicios: lista editorial + programas ──────────────── */
+.svc-head{max-width:none}
+.svc-block{margin-top:44px}
+.svc-sub{font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-family:var(--font);margin:0 0 4px;padding-bottom:12px;border-bottom:1px solid var(--ink)}
+.svc-list,.svc-list>li,.svc-del ul,.svc-del li{list-style:none!important;margin-left:0!important;padding-left:0}
+.svc-list{margin:0!important;padding:0!important}
+.svc-list>li::marker,.svc-del li::marker{content:none}
+.svc-row{display:grid;grid-template-columns:64px minmax(0,1.15fr) minmax(0,1fr);gap:8px 32px;padding:26px 0;border-bottom:1px solid var(--line)}
+.svc-n{font-family:var(--font-h);font-weight:500;font-size:1rem;color:var(--muted);letter-spacing:.02em;padding-top:2px;font-variant-numeric:tabular-nums}
+.svc-main h4{font-size:1.2rem;font-weight:600;margin:0 0 6px;letter-spacing:-.005em}
+.svc-main p{margin:0;color:var(--ink-2);font-size:.98rem;max-width:44ch}
+.svc-lbl{font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:3px 0 8px}
+.svc-del ul{margin:0!important;padding:0!important;color:var(--ink-2);font-size:.95rem}
+.svc-del li{position:relative;padding-left:18px!important;margin:0 0 5px}
+.svc-del li::before{content:"";position:absolute;left:0;top:.8em;width:8px;height:1px;background:var(--ink)}
+.svc-intro{color:var(--ink-2);margin:14px 0 6px;max-width:640px}
+.prog-wrap{overflow-x:auto}
+.prog{width:100%;border-collapse:collapse;font-size:.96rem;table-layout:fixed}
+.prog th,.prog td{text-align:left;vertical-align:top;padding:14px 16px 14px 0;border-bottom:1px solid var(--line)}
+.prog thead th{padding:18px 16px 16px 0;border-bottom:1px solid var(--line-strong);font-weight:400}
+.prog .prog-empty{width:34%}
+.prog-name{display:block;font-family:var(--font-h);font-weight:600;font-size:1.1rem;color:var(--ink)}
+.prog-for{display:block;color:var(--muted);font-size:.9rem;margin-top:4px;line-height:1.45}
+.prog tbody th{font-weight:500;color:var(--ink)}
+.prog tbody td{color:var(--ink-2)}
+.prog-note{margin:18px 0 0;color:var(--ink-2);font-size:.95rem}
+.prog-note b{color:var(--ink);font-weight:600}
+.svc-foot{display:flex;align-items:center;gap:12px 20px;flex-wrap:wrap;margin-top:36px}
+.svc-foot p{margin:0}
+@media (max-width:760px){
+  .svc-row{grid-template-columns:44px minmax(0,1fr);padding:22px 0}
+  .svc-del{grid-column:2}
+  .svc-del .svc-lbl{margin-top:10px}
+}
+@media (max-width:640px){
+  .prog,.prog thead,.prog tbody,.prog tr,.prog th,.prog td{display:block;width:auto}
+  .prog .prog-empty{display:none}
+  .prog thead tr{display:grid;grid-template-columns:1fr 1fr;gap:14px;border-bottom:1px solid var(--line-strong)}
+  .prog thead th{border:0;padding:14px 0 14px}
+  .prog-name{font-size:1rem}
+  .prog tbody tr{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .prog tbody th{grid-column:1/-1;border:0;padding:0 0 2px}
+  .prog tbody td{border:0;padding:0;font-size:.92rem}
+  .prog tbody td::before{content:attr(data-l);display:block;font-size:.72rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+}
+[data-contrast="high"] .svc-row,[data-contrast="high"] .prog th,[data-contrast="high"] .prog td{border-bottom-width:2px}
+#servicios .eyebrow{color:var(--ink)}
+#servicios .eyebrow::before{background:var(--ink)}
+#servicios .svc-foot .btn-primary{background:var(--ink);border-color:var(--ink);color:var(--card)}
+#servicios .svc-foot .btn-primary:hover{background:var(--ink-2);border-color:var(--ink-2)}
+#servicios :focus-visible{outline-color:var(--ink)!important}
+</style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
  {"@type":"Organization","name":"Manco Lab","url":"https://mancolab.com","email":"info@mancolab.com","telephone":"+51 1 709 7828",
@@ -214,26 +267,26 @@
     </div>
     <div class="svc-block">
       <h3 class="svc-sub" id="svc-ind-t">Servicios</h3>
-      <ol class="svc-list" aria-labelledby="svc-ind-t">
+      <ol class="svc-list" aria-labelledby="svc-ind-t" style="list-style:none;margin:0;padding:0">
       <li class="svc-row">
         <span class="svc-n" aria-hidden="true">01</span>
         <div class="svc-main"><h4>CareerScore Pro</h4><p>Para saber con precisión qué cambiar en tu perfil antes de invertir tiempo en rehacerlo.</p></div>
-        <div class="svc-del"><p class="svc-lbl" id="svc-d1">Incluye</p><ul aria-labelledby="svc-d1"><li>Revisión completa de tu perfil por un especialista</li><li>Videollamada de 30 minutos</li><li>Informe escrito con cambios concretos</li></ul></div>
+        <div class="svc-del"><p class="svc-lbl" id="svc-d1">Incluye</p><ul aria-labelledby="svc-d1" style="list-style:none;margin:0;padding:0"><li>Revisión completa de tu perfil por un especialista</li><li>Videollamada de 30 minutos</li><li>Informe escrito con cambios concretos</li></ul></div>
       </li>
       <li class="svc-row">
         <span class="svc-n" aria-hidden="true">02</span>
         <div class="svc-main"><h4>Perfil de LinkedIn optimizado</h4><p>Para que los reclutadores te encuentren al buscar tu puesto objetivo y entiendan lo que aportas.</p></div>
-        <div class="svc-del"><p class="svc-lbl" id="svc-d2">Incluye</p><ul aria-labelledby="svc-d2"><li>Titular, Acerca de y experiencia reescritos</li><li>Palabras clave para tu puesto objetivo</li><li>Banner y checklist de completitud</li></ul></div>
+        <div class="svc-del"><p class="svc-lbl" id="svc-d2">Incluye</p><ul aria-labelledby="svc-d2" style="list-style:none;margin:0;padding:0"><li>Titular, Acerca de y experiencia reescritos</li><li>Palabras clave para tu puesto objetivo</li><li>Banner y checklist de completitud</li></ul></div>
       </li>
       <li class="svc-row">
         <span class="svc-n" aria-hidden="true">03</span>
         <div class="svc-main"><h4>CV compatible con ATS</h4><p>Para que tu CV se lea correctamente en los sistemas de selección y también ante quien decide.</p></div>
-        <div class="svc-del"><p class="svc-lbl" id="svc-d3">Incluye</p><ul aria-labelledby="svc-d3"><li>CV en un formato que leen los sistemas de selección</li><li>Versión en inglés, como adicional</li><li>Carta de presentación adaptable</li></ul></div>
+        <div class="svc-del"><p class="svc-lbl" id="svc-d3">Incluye</p><ul aria-labelledby="svc-d3" style="list-style:none;margin:0;padding:0"><li>CV en un formato que leen los sistemas de selección</li><li>Versión en inglés, como adicional</li><li>Carta de presentación adaptable</li></ul></div>
       </li>
       <li class="svc-row">
         <span class="svc-n" aria-hidden="true">04</span>
         <div class="svc-main"><h4>Coaching de entrevistas</h4><p>Para llegar a la entrevista con respuestas claras y una posición sólida al negociar.</p></div>
-        <div class="svc-del"><p class="svc-lbl" id="svc-d4">Incluye</p><ul aria-labelledby="svc-d4"><li>Simulación de entrevista con retroalimentación</li><li>Respuestas por competencias (método STAR)</li><li>Negociación de oferta y salario</li></ul></div>
+        <div class="svc-del"><p class="svc-lbl" id="svc-d4">Incluye</p><ul aria-labelledby="svc-d4" style="list-style:none;margin:0;padding:0"><li>Simulación de entrevista con retroalimentación</li><li>Respuestas por competencias (método STAR)</li><li>Negociación de oferta y salario</li></ul></div>
       </li>
       </ol>
     </div>
@@ -287,7 +340,7 @@
 
 <section class="section band" id="empresas" aria-labelledby="empresas-t">
   <div class="wrap">
-    <span class="eyebrow" style="color:var(--mint)">Para empresas</span>
+    <span class="eyebrow eyebrow-inv">Para empresas</span>
     <h2 id="empresas-t">Soluciones de talento para tu organización</h2>
     <p class="lead" style="color:#C9D7DC">Acompañamos a áreas de Gestión Humana en procesos de salida, desarrollo y selección, con un enfoque práctico y medible.</p>
     <div class="grid-3" style="margin-top:26px">
